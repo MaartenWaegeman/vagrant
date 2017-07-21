@@ -1,0 +1,2 @@
+# vagrant
+Default Vagrant Configuration!
