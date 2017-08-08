@@ -1,0 +1,9 @@
+---
+- name: Webservers
+  hosts: webservers
+  gather_facts: yes
+  become: yes
+  
+  roles:
+    - ntp
+ 

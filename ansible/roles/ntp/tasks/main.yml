@@ -1,0 +1,28 @@
+---
+- name: Make sure NTP is installed.
+  package: 
+    name: ntp 
+    state: present
+
+- name: Make sure tzdata package is installed.
+  package:
+    name: tzdata
+    state: present
+
+- name: Set the timezone.
+  timezone:
+    name: "{{ ntp_timezone }}"
+
+- name: Make sure NTP is running and enabled as configured.
+  service:
+    name: "{{ ntp_daemon }}"
+    state: started
+    enabled: yes
+  when: ntp_enabled
+
+- name: Make sure NTP is stopped and disabled as configured.
+  service:
+    name: "{{ ntp_daemon }}"
+    state: stopped
+    enabled: no
+  when: not ntp_enabled
