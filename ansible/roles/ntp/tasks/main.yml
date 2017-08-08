@@ -1,7 +1,7 @@
 ---
 - name: Make sure NTP is installed.
   package: 
-    name: ntp 
+    name: "{{ ntp_daemon }}"
     state: present
 
 - name: Make sure tzdata package is installed.

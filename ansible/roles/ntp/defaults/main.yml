@@ -1,4 +1,4 @@
 ---
+ntp_daemon: ntp
 ntp_enabled: true
 ntp_timezone: Europe/Brussels
-ntp_daemon: ntp
